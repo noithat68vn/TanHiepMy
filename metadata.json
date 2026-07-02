@@ -1,0 +1,6 @@
+{
+  "name": "Tan Hiep My",
+  "description": "A modern landing page for Tan Hiep My.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
