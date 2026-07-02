@@ -71,7 +71,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-[1400px] mx-auto border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-        <p>© Bản quyền thuộc về <span className="font-semibold text-white"><EditableText initialText="Wolf Themes" /></span>. Cung cấp bởi <EditableText initialText="Sapo" /></p>
+        <p>© Bản quyền thuộc về <span className="font-semibold text-white"><EditableText initialText="Wolf Themes" /></span>.</p>
       </div>
 
       {/* Floating Action Buttons */}

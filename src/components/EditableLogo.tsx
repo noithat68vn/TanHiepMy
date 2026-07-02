@@ -5,11 +5,20 @@ import EditableText from './EditableText';
 interface EditableLogoProps {
   defaultText?: string;
   className?: string;
+  id?: string;
 }
 
-export default function EditableLogo({ defaultText = "WolfArch", className = "" }: EditableLogoProps) {
-  const [mode, setMode] = useState<'text' | 'image'>('text');
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
+export default function EditableLogo({ defaultText = "WolfArch", className = "", id }: EditableLogoProps) {
+  const key = id || defaultText;
+  const storageModeKey = `logo-mode-${key}`;
+  const storageImageKey = `logo-image-${key}`;
+
+  const [mode, setMode] = useState<'text' | 'image'>(() => {
+    return (localStorage.getItem(storageModeKey) as 'text' | 'image') || 'text';
+  });
+  const [imageSrc, setImageSrc] = useState<string | null>(() => {
+    return localStorage.getItem(storageImageKey) || null;
+  });
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,19 +27,27 @@ export default function EditableLogo({ defaultText = "WolfArch", className = "" 
       const reader = new FileReader();
       reader.onload = (event) => {
         if (event.target?.result) {
-          setImageSrc(event.target.result as string);
+          const result = event.target.result as string;
+          setImageSrc(result);
           setMode('image');
+          localStorage.setItem(storageImageKey, result);
+          localStorage.setItem(storageModeKey, 'image');
         }
       };
       reader.readAsDataURL(file);
     }
   };
 
+  const switchToText = () => {
+    setMode('text');
+    localStorage.setItem(storageModeKey, 'text');
+  };
+
   return (
     <div className={`group relative inline-flex items-center ${className}`}>
       {mode === 'text' ? (
         <div className="text-2xl font-bold tracking-wider">
-          <EditableText initialText={defaultText} />
+          <EditableText initialText={defaultText} id={`logo-text-${key}`} />
         </div>
       ) : (
         <img src={imageSrc || ""} alt="Logo" className="max-h-12 w-auto object-contain" />
@@ -46,7 +63,7 @@ export default function EditableLogo({ defaultText = "WolfArch", className = "" 
         </button>
         {mode === 'image' && (
           <button 
-            onClick={() => setMode('text')}
+            onClick={switchToText}
             className="p-1 text-white bg-gray-600 hover:bg-gray-700 rounded-full shadow-md shrink-0 cursor-pointer"
             title="Dùng Logo chữ"
           >

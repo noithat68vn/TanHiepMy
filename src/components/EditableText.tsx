@@ -5,11 +5,16 @@ interface EditableTextProps {
   initialText: string;
   className?: string;
   multiline?: boolean;
+  id?: string;
 }
 
-export default function EditableText({ initialText, className = "", multiline = false }: EditableTextProps) {
+export default function EditableText({ initialText, className = "", multiline = false, id }: EditableTextProps) {
+  const storageKey = `editable-text-${id || initialText}`;
+  
   const [isEditing, setIsEditing] = useState(false);
-  const [text, setText] = useState(initialText);
+  const [text, setText] = useState(() => {
+    return localStorage.getItem(storageKey) || initialText;
+  });
   const inputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
 
   useEffect(() => {
@@ -20,11 +25,13 @@ export default function EditableText({ initialText, className = "", multiline = 
 
   const handleBlur = () => {
     setIsEditing(false);
+    localStorage.setItem(storageKey, text);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !multiline) {
       setIsEditing(false);
+      localStorage.setItem(storageKey, text);
     }
   };
 
