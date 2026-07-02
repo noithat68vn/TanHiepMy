@@ -15,8 +15,9 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Trang chủ', hasDropdown: false },
     { name: 'Giới thiệu', hasDropdown: false },
-    { name: 'Nội thất nhà ở', hasDropdown: false },
-    { name: 'Nội thất Văn phòng', hasDropdown: false },
+    { name: 'Nội Thất nhà ở', hasDropdown: false },
+    { name: 'Nội Thất Văn phòng', hasDropdown: false },
+    { name: 'Sản phẩm', hasDropdown: false },
     { name: 'Thương mại', hasDropdown: false },
     { name: 'Dự án', hasDropdown: false },
     { name: 'Tin tức', hasDropdown: false },
@@ -38,7 +39,7 @@ export default function Navbar() {
       <nav className="absolute top-0 w-full z-50 text-white py-4 px-4 md:px-8 border-b border-white/20">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between">
           {/* Logo */}
-          <EditableLogo defaultText="WolfArch" />
+          <EditableLogo defaultText="Tân Hiệp Mỹ" />
           
           {/* Desktop Links */}
           <div className="hidden xl:flex items-center space-x-6 text-sm font-medium">

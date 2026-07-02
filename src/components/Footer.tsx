@@ -13,20 +13,20 @@ export default function Footer() {
         {/* Brand & Contact */}
         <div>
           <div className="mb-6">
-            <EditableLogo defaultText="WolfArch" />
+            <EditableLogo defaultText="Tân Hiệp Mỹ" />
           </div>
           <ul className="space-y-4 text-sm text-gray-400">
             <li className="flex items-start">
               <Mail className="w-5 h-5 mr-3 shrink-0 text-white" />
-              <span><EditableText initialText="support@sapo.vn" /></span>
+              <span><EditableText initialText="support@tanhiepmy.vn" /></span>
             </li>
             <li className="flex items-start">
               <MapPin className="w-5 h-5 mr-3 shrink-0 text-white" />
-              <span className="leading-relaxed"><EditableText initialText="70 Lữ Gia, Phường 15, Quận 11, Thành phố Hồ Chí Minh" multiline /></span>
+              <span className="leading-relaxed"><EditableText initialText="2/47/10 Tô Ngọc Vân, Phường An Hội Đông, Tp. Hồ Chí Minh" multiline /></span>
             </li>
             <li className="flex items-start">
               <Phone className="w-5 h-5 mr-3 shrink-0 text-white" />
-              <span><EditableText initialText="1900 6750" /></span>
+              <span><EditableText initialText="0869-111-799" /></span>
             </li>
           </ul>
         </div>
@@ -37,7 +37,7 @@ export default function Footer() {
             <EditableText initialText="Về chúng tôi" />
           </h3>
           <ul className="space-y-3 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Giới thiệu Wolf Arch" /></a></li>
+            <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Giới thiệu về Tân Hiệp Mỹ" /></a></li>
             <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Tuyển dụng" /></a></li>
             <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Dự án đã thực hiện" /></a></li>
           </ul>
@@ -49,9 +49,9 @@ export default function Footer() {
             <EditableText initialText="Portfolio" />
           </h3>
           <ul className="space-y-3 text-sm text-gray-400">
-            <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Thiết kế nội thất nhà ở" /></a></li>
-            <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Thiết kế nhà sang trọng" /></a></li>
-            <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Thiết kế không gian thương mại" /></a></li>
+            <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Thiết kế thi công nội thất nhà ở" /></a></li>
+            <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Thiết kế thi công nội thất văn phòng" /></a></li>
+            <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Thiết kế thi công không gian thương mại" /></a></li>
             <li><a href="#" className="hover:text-[#C09F7A] transition-colors"><EditableText initialText="Thiết kế cải tạo và phục hồi" /></a></li>
           </ul>
         </div>
@@ -71,7 +71,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-[1400px] mx-auto border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-        <p>© Bản quyền thuộc về <span className="font-semibold text-white"><EditableText initialText="Wolf Themes" /></span>.</p>
+        <p>© Bản quyền thuộc về <span className="font-semibold text-white"><EditableText initialText="Tân Hiệp Mỹ" /></span>.</p>
       </div>
 
       {/* Floating Action Buttons */}
